@@ -1,0 +1,23 @@
+.App {
+  /* display: flex;
+  flex:1;
+  flex-direction: row;
+  background-color:blue; */
+}
+
+/* .App a {
+  display: flex;
+  flex:1;
+  flex-direction: row;
+  flex-wrap: wrap;
+} */
+/* @media screen and (max-width: 450px) {
+    .App {padding-top: 15px;}
+    .App a {font-size: 18px;}
+} */
+
+/* @media only screen and (max-width: 600px) {
+    .SideBar {
+        background-color: lightblue;
+    }
+} */
