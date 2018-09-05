@@ -156,17 +156,14 @@ const FullScreenPage =(props)=> {
          style.maxWidth = '100%';
          style.maxHeight = '100%';
        }
-
        this.picStyle = document.getElementById('pic').style
-       // this.picStyle.width = node[0].clientWidth+'px',
-       // this.picStyle.height = node[0].clientHeight+'px'
-       this.picStyle.width = '100%'
+       this.picStyle.width = window.innerWidth-370 +'px'  //370= margin-left
        this.picStyle.height = '100vh'
-       // this.listener = window
-       //   .addEventListener('resize',()=>{
-       //     this.picStyle.width = node[0].clientWidth+'px',
-       //     this.picStyle.height = node[0].clientHeight+'px'
-       //   });
+
+       this.listener = window
+         .addEventListener('resize',()=>{
+           this.picStyle.width = window.innerWidth+'px'
+         });
     },
    {orientation:true}
   )
