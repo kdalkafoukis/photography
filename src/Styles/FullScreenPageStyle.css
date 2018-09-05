@@ -3,6 +3,7 @@
   height:100vh !important;
   margin-left:370px !important;
   padding:40px !important;
+  justify-content: center;
 }
 .prev,.showthumbnails,.next{
   display:flex !important;
