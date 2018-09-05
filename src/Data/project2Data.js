@@ -8,19 +8,16 @@ const project2Data = [
     title: '1',
     author: 'tsipos',
     src:pic1,
-    orientation:'landscape'
   },
   {
     title: '2',
     author: 'tsipos',
     src:pic2,
-    orientation:'landscape'
   },
   {
     title: '3',
     author: 'tsipos',
     src:pic3,
-    orientation:'portrait'
   },
 ];
 
