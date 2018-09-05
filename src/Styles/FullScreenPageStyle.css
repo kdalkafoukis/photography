@@ -24,7 +24,7 @@
 
 .photoNavigationContainer {
   display:flex !important;
-  position:absolute !important;
+  position:fixed !important;
 }
 
 .bottomNavigationContainer {
