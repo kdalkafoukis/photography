@@ -7,10 +7,11 @@ import '../Styles/PersonalPageStyle.css';
 const PersonalPage =(props)=> {
   console.log('PersonalPage',props);
   return(
-    <div style={{marginLeft:'330px',padding:40}}>
-        <img style={{width: '90%',height:'100%'}} src={pic1} alt=''/>
+    <div className='mainContainer'>
+      <div>
+        <img className='image' src={pic1} alt=''/>
+      </div>
     </div>
   )
 }
-
 export default PersonalPage;
