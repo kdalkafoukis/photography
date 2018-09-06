@@ -1,15 +1,12 @@
 import React from 'react';
-
-import pic1 from '../Pictures/Project1/1.jpg'
-
 import '../Styles/PersonalPageStyle.css';
+import pic from '../Pictures/Project1/1.jpg'
 
 const PersonalPage =(props)=> {
-  console.log('PersonalPage',props);
   return(
     <div className='mainContainer'>
       <div>
-        <img className='image' src={pic1} alt=''/>
+        <img className='image' src={pic} alt=''/>
       </div>
     </div>
   )

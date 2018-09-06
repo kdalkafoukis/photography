@@ -26,7 +26,6 @@
   display: flex !important;
   flex:1 !important;
   flex-direction: column !important;
-
   font-family: proxima-nova !important;
   font-weight: 500 !important;
   font-style: normal !important;
@@ -37,9 +36,6 @@
   display: block !important;
   padding: .2em !important;
   text-decoration: none !important;
-
-
-
 }
 
 .Name {

@@ -1,28 +1,25 @@
+
 import React from 'react';
-
 import loadImage from 'blueimp-load-image';
-
-import {NavLink,Route} from 'react-router-dom';
-
-import tileData from '../Data/project1Data.js'
-
+import {Route} from 'react-router-dom';
 import '../Styles/FullScreenPageStyle.css';
+import tileData from '../Data/projectData.js'
 
-const removeListener = () => {
-  console.log('1',this.listener);
-  if(this.listener){
-    this.listener = window
-      .removeEventListener('resize',()=>{
-
-      });
-    console.log('2',this.listener);
-    this.listener = ''
-  }
-  console.log('3',this.listener);
-}
+// const removeListener = () => {
+//   console.log('1',this.listener);
+//   if(this.listener){
+//     this.listener = window
+//       .removeEventListener('resize',()=>{
+//
+//       });
+//     console.log('2',this.listener);
+//     this.listener = ''
+//   }
+//   console.log('3',this.listener);
+// }
 
 const Thumbnails = (props) => {
-  const location = '/project1/';
+  const location = props.project+'/';
   return(
     <Route render={({ history}) => (
       <div className='showthumbnails' onClick={() => {history.push(location)}}></div>
@@ -32,14 +29,15 @@ const Thumbnails = (props) => {
 const Increase = (props) => {
   let title;
   const split = props.location.pathname.split('/')[2];
+  const project = props.location.pathname.split('/')[1];
   const num = parseInt(split,10);
-  if (num < tileData.length){
+  if (num < tileData[project].length){
     title = num+1;
   }
   else{
     title = 1;
   }
-  const location = '/project1/'+title;
+  const location = props.project+'/'+title;
   return(
     <Route render={({ history}) => (
       <div className='next' onClick={() => {history.push(location)}}></div>
@@ -49,15 +47,15 @@ const Increase = (props) => {
 const Decrease = (props) => {
   let title;
   const split = props.location.pathname.split('/')[2];
+  const project = props.location.pathname.split('/')[1];
   const num = parseInt(split,10);
   if (num > 1){
     title = num-1;
   }
   else{
-    title = tileData.length;
+    title = tileData[project].length;
   }
-  console.log('render2',title);
-  const location = '/project1/'+title;
+  const location = props.project+'/' + title;
   return(
     <Route render={({ history}) => (
       <div className='prev' onClick={() => {history.push(location)}}></div>
@@ -68,14 +66,15 @@ const Decrease = (props) => {
 const IncreaseButton = (props) => {
   let title;
   const split = props.location.pathname.split('/')[2];
+  const project = props.location.pathname.split('/')[1];
   const num = parseInt(split,10);
-  if (num < tileData.length){
+  if (num < tileData[project].length){
     title = num+1;
   }
   else{
     title = 1;
   }
-  const location = '/project1/'+title;
+  const location = props.project+'/'+title;
   return(
     <Route render={({ history}) => (
       <div onClick={() => {history.push(location)}}>
@@ -87,15 +86,15 @@ const IncreaseButton = (props) => {
 const DecreaseButton = (props) => {
   let title;
   const split = props.location.pathname.split('/')[2];
+  const project = props.location.pathname.split('/')[1];
   const num = parseInt(split,10);
   if (num > 1){
     title = num-1;
   }
   else{
-    title = tileData.length;
+    title = tileData[project].length;
   }
-  console.log('render2',title);
-  const location = '/project1/'+title;
+  const location = props.project+'/'+title;
   return(
     <Route render={({ history}) => (
       <div onClick={() => {history.push(location)}}>
@@ -105,7 +104,7 @@ const DecreaseButton = (props) => {
 )}
 
 const ThumbnailsButton = (props) => {
-  const location = '/project1/';
+  const location = props.project+'/';
   return(
     <Route render={({ history}) => (
       <div onClick={() => {history.push(location)}}>
@@ -132,7 +131,8 @@ const BottomNavigation =  (props) =>(
 )
 
 const FullScreenPage =(props)=> {
-  const source = tileData[props.match.params.id-1].src;
+  const project = props.location.pathname.split('/')[1];
+  const source = tileData[project][props.match.params.id-1].src;
 
   loadImage(
     source, (img) =>{
