@@ -3,7 +3,7 @@ import React from 'react';
 import loadImage from 'blueimp-load-image';
 import {Route} from 'react-router-dom';
 import '../Styles/FullScreenPageStyle.css';
-import tileData from '../Data/projectData.js'
+import tileData from '../Data/projectData.js';
 
 // const removeListener = () => {
 //   console.log('1',this.listener);
@@ -33,7 +33,7 @@ const Increase = (props) => {
   let id;
   tileData[project].forEach((data,index) =>{
     if (projectName === data.title){
-      id = index
+      id = index;
     }
   })
 
@@ -59,7 +59,7 @@ const Decrease = (props) => {
   let id;
   tileData[project].forEach((data,index) =>{
     if (projectName === data.title){
-      id = index
+      id = index;
     }
   })
 
@@ -86,7 +86,7 @@ const IncreaseButton = (props) => {
   let id;
   tileData[project].forEach((data,index) =>{
     if (projectName === data.title){
-      id = index
+      id = index;
     }
   })
 
@@ -114,7 +114,7 @@ const DecreaseButton = (props) => {
   let id;
   tileData[project].forEach((data,index) =>{
     if (projectName === data.title){
-      id = index
+      id = index;
     }
   })
 
@@ -168,7 +168,7 @@ const FullScreenPage =(props)=> {
   let source;
   tileData[project].forEach(data =>{
     if (projectName === data.title){
-      source = data.src
+      source = data.src;
     }
   })
 
@@ -176,7 +176,7 @@ const FullScreenPage =(props)=> {
     source, (img) =>{
        const node = document.getElementsByTagName('canvas')
        if(node.length>0){
-         node[0].remove()
+         node[0].remove();
        }
        document.getElementById('picture').appendChild(img);
 
@@ -194,13 +194,15 @@ const FullScreenPage =(props)=> {
          style.maxWidth = '100%';
          style.maxHeight = '100%';
        }
-       this.picStyle = document.getElementById('pic').style
-       this.picStyle.width = window.innerWidth-370 +'px'  //370= margin-left
-       this.picStyle.height = '100vh'
+       this.picStyle = document.getElementById('pic').style;
+       this.picStyle.width = window.innerWidth-370 +'px';  //370= margin-left
+       this.picStyle.height = '100vh';
+       this.picStyle.paddingLeft = '40px';
+       this.picStyle.paddingRight = '40px';
 
        this.listener = window
          .addEventListener('resize',()=>{
-           this.picStyle.width = window.innerWidth+'px'
+           this.picStyle.width = window.innerWidth+'px';
          });
     },
    {orientation:true}
