@@ -19,6 +19,7 @@ const App = () => {
       if(width<800){
         console.log('good');
       }
+      // return(<div>hello</div>)
     });
 
   return (

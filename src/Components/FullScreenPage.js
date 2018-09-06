@@ -155,12 +155,10 @@ const FullScreenPage =(props)=> {
          style.maxWidth = '100%';
          style.maxHeight = '100%';
        }
-       
+
        this.picStyle = document.getElementById('pic').style;
        this.picStyle.width = window.innerWidth-370 +'px';  //370= margin-left
        this.picStyle.height = '100vh';
-       this.picStyle.paddingLeft = '40px';
-       this.picStyle.paddingRight = '40px';
 
        this.listener = window
          .addEventListener('resize',()=>{
