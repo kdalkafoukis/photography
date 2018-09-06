@@ -18,6 +18,39 @@ import tileData from '../Data/projectData.js';
 //   console.log('3',this.listener);
 // }
 
+const change = (props,control) => {
+  const project = props.location.pathname.split('/')[1];
+  const projectName = props.match.params.id;
+  const length = tileData[project].length-1;
+  let id;
+  tileData[project].forEach((data,index) =>{
+    if (projectName === data.title){
+      id = index;
+    }
+  })
+
+  let title;
+  if(control === 'increase'){
+    if (id < length){
+      id = id+1;
+    }
+    else{
+      id = 0;
+    }
+  }
+  else if (control === 'decrease') {
+    if (id > 0){
+      id = id-1;
+    }
+    else{
+      id = length;
+    }
+  }
+  title = tileData[project][id].title;
+  const location = props.project+'/'+title;
+  return location;
+}
+
 const Thumbnails = (props) => {
   const location = props.project+'/';
   return(
@@ -27,25 +60,7 @@ const Thumbnails = (props) => {
 )}
 
 const Increase = (props) => {
-  const project = props.location.pathname.split('/')[1];
-  const projectName = props.match.params.id;
-  const length = tileData[project].length-1;
-  let id;
-  tileData[project].forEach((data,index) =>{
-    if (projectName === data.title){
-      id = index;
-    }
-  })
-
-  let title;
-  if (id < length){
-    id = id+1;
-  }
-  else{
-    id = 0;
-  }
-  title = tileData[project][id].title
-  const location = props.project+'/'+title;
+  const location = change(props,'increase')
   return(
     <Route render={({ history}) => (
       <div className='next' onClick={() => {history.push(location)}}></div>
@@ -53,25 +68,7 @@ const Increase = (props) => {
 )}
 
 const Decrease = (props) => {
-  const project = props.location.pathname.split('/')[1];
-  const projectName = props.match.params.id;
-  const length = tileData[project].length-1;
-  let id;
-  tileData[project].forEach((data,index) =>{
-    if (projectName === data.title){
-      id = index;
-    }
-  })
-
-  let title;
-  if (id > 0){
-    id = id-1;
-  }
-  else{
-    id = length;
-  }
-  title = tileData[project][id].title
-  const location = props.project+'/'+title;
+  const location = change(props,'decrease')
   return(
     <Route render={({ history}) => (
       <div className='prev' onClick={() => {history.push(location)}}></div>
@@ -80,25 +77,7 @@ const Decrease = (props) => {
 
 
 const IncreaseButton = (props) => {
-  const project = props.location.pathname.split('/')[1];
-  const projectName = props.match.params.id;
-  const length = tileData[project].length-1;
-  let id;
-  tileData[project].forEach((data,index) =>{
-    if (projectName === data.title){
-      id = index;
-    }
-  })
-
-  let title;
-  if (id < length){
-    id = id+1;
-  }
-  else{
-    id = 0;
-  }
-  title = tileData[project][id].title
-  const location = props.project+'/'+title;
+  const location = change(props,'increase')
   return(
     <Route render={({ history}) => (
       <div onClick={() => {history.push(location)}}>
@@ -108,25 +87,7 @@ const IncreaseButton = (props) => {
 )}
 
 const DecreaseButton = (props) => {
-  const project = props.location.pathname.split('/')[1];
-  const projectName = props.match.params.id;
-  const length = tileData[project].length-1;
-  let id;
-  tileData[project].forEach((data,index) =>{
-    if (projectName === data.title){
-      id = index;
-    }
-  })
-
-  let title;
-  if (id > 0){
-    id = id-1;
-  }
-  else{
-    id = length;
-  }
-  title = tileData[project][id].title
-  const location = props.project+'/'+title;
+  const location = change(props,'decrease')
   return(
     <Route render={({ history}) => (
       <div onClick={() => {history.push(location)}}>
@@ -194,6 +155,7 @@ const FullScreenPage =(props)=> {
          style.maxWidth = '100%';
          style.maxHeight = '100%';
        }
+       
        this.picStyle = document.getElementById('pic').style;
        this.picStyle.width = window.innerWidth-370 +'px';  //370= margin-left
        this.picStyle.height = '100vh';
