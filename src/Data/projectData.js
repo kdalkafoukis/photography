@@ -2,78 +2,78 @@ import pic1 from '../Pictures/Project1/1.jpg'
 import pic2 from '../Pictures/Project1/2.jpg'
 import pic3 from '../Pictures/Project1/3.jpg'
 
+export const projects = ['project1','project2']
+
 const projectData = {
   project1:[
     {
-      title: '1',
+      title: 'orange-tree',
       author: 'tsipos',
       src:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg',
     },
     {
-      title: '2',
+      title: 'submerged',
       author: 'tsipos',
       src:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg',
     },
     {
-      title: '3',
+      title: 'look-out',
       author: 'tsipos',
       src:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg',
     },
     {
-      title: '4',
+      title: 'one-world-trade',
       author: 'tsipos',
       src:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg',
     },
     {
-      title: '5',
+      title: 'drizzle',
       author: 'tsipos',
       src:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg',
     },
     {
-      title: '6',
+      title: 'cat-nose',
       author: 'tsipos',
       src:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg',
     },
     {
-      title: '7',
+      title: 'contrail',
       author: 'tsipos',
       src:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg',
     },
     {
-      title: '8',
+      title: 'golden-hour',
       author: 'tsipos',
       src:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg',
     },
     {
-      title: '9',
+      title: 'flight-formation',
       author: 'tsipos',
       src:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg',
     },
     {
-      title: '10',
+      title: 'pic1',
       author: 'tsipos',
       src:pic1,
     },
   ],
   project2:[
     {
-      title: '1',
+      title: 'pic1',
       author: 'tsipos',
       src:pic1,
     },
     {
-      title: '2',
+      title: 'pic2',
       author: 'tsipos',
       src:pic2,
     },
     {
-      title: '3',
+      title: 'pic3',
       author: 'tsipos',
       src:pic3,
     },
-  ]
+  ],
 }
 
 export default projectData;
-
-export const projects = ['project1','project2']

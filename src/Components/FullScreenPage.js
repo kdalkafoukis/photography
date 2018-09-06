@@ -27,16 +27,24 @@ const Thumbnails = (props) => {
 )}
 
 const Increase = (props) => {
-  let title;
-  const split = props.location.pathname.split('/')[2];
   const project = props.location.pathname.split('/')[1];
-  const num = parseInt(split,10);
-  if (num < tileData[project].length){
-    title = num+1;
+  const projectName = props.match.params.id;
+  const length = tileData[project].length-1;
+  let id;
+  tileData[project].forEach((data,index) =>{
+    if (projectName === data.title){
+      id = index
+    }
+  })
+
+  let title;
+  if (id < length){
+    id = id+1;
   }
   else{
-    title = 1;
+    id = 0;
   }
+  title = tileData[project][id].title
   const location = props.project+'/'+title;
   return(
     <Route render={({ history}) => (
@@ -45,17 +53,25 @@ const Increase = (props) => {
 )}
 
 const Decrease = (props) => {
-  let title;
-  const split = props.location.pathname.split('/')[2];
   const project = props.location.pathname.split('/')[1];
-  const num = parseInt(split,10);
-  if (num > 1){
-    title = num-1;
+  const projectName = props.match.params.id;
+  const length = tileData[project].length-1;
+  let id;
+  tileData[project].forEach((data,index) =>{
+    if (projectName === data.title){
+      id = index
+    }
+  })
+
+  let title;
+  if (id > 0){
+    id = id-1;
   }
   else{
-    title = tileData[project].length;
+    id = length;
   }
-  const location = props.project+'/' + title;
+  title = tileData[project][id].title
+  const location = props.project+'/'+title;
   return(
     <Route render={({ history}) => (
       <div className='prev' onClick={() => {history.push(location)}}></div>
@@ -64,16 +80,24 @@ const Decrease = (props) => {
 
 
 const IncreaseButton = (props) => {
-  let title;
-  const split = props.location.pathname.split('/')[2];
   const project = props.location.pathname.split('/')[1];
-  const num = parseInt(split,10);
-  if (num < tileData[project].length){
-    title = num+1;
+  const projectName = props.match.params.id;
+  const length = tileData[project].length-1;
+  let id;
+  tileData[project].forEach((data,index) =>{
+    if (projectName === data.title){
+      id = index
+    }
+  })
+
+  let title;
+  if (id < length){
+    id = id+1;
   }
   else{
-    title = 1;
+    id = 0;
   }
+  title = tileData[project][id].title
   const location = props.project+'/'+title;
   return(
     <Route render={({ history}) => (
@@ -84,16 +108,24 @@ const IncreaseButton = (props) => {
 )}
 
 const DecreaseButton = (props) => {
-  let title;
-  const split = props.location.pathname.split('/')[2];
   const project = props.location.pathname.split('/')[1];
-  const num = parseInt(split,10);
-  if (num > 1){
-    title = num-1;
+  const projectName = props.match.params.id;
+  const length = tileData[project].length-1;
+  let id;
+  tileData[project].forEach((data,index) =>{
+    if (projectName === data.title){
+      id = index
+    }
+  })
+
+  let title;
+  if (id > 0){
+    id = id-1;
   }
   else{
-    title = tileData[project].length;
+    id = length;
   }
+  title = tileData[project][id].title
   const location = props.project+'/'+title;
   return(
     <Route render={({ history}) => (
@@ -132,7 +164,13 @@ const BottomNavigation =  (props) =>(
 
 const FullScreenPage =(props)=> {
   const project = props.location.pathname.split('/')[1];
-  const source = tileData[project][props.match.params.id-1].src;
+  const projectName = props.match.params.id;
+  let source;
+  tileData[project].forEach(data =>{
+    if (projectName === data.title){
+      source = data.src
+    }
+  })
 
   loadImage(
     source, (img) =>{
