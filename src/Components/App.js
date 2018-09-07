@@ -13,15 +13,6 @@ import Contact from './Contact';
 const active = {color: '#878787'};
 
 const App = () => {
-  this.listener = window
-    .addEventListener('resize',()=>{
-      const width = window.innerWidth
-      if(width<800){
-        console.log('good');
-      }
-      // return(<div>hello</div>)
-    });
-
   return (
     <Router>
       <div className='App'>

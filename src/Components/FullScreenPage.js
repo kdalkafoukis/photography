@@ -5,19 +5,6 @@ import {Route} from 'react-router-dom';
 import '../Styles/FullScreenPageStyle.css';
 import tileData from '../Data/projectData.js';
 
-// const removeListener = () => {
-//   console.log('1',this.listener);
-//   if(this.listener){
-//     this.listener = window
-//       .removeEventListener('resize',()=>{
-//
-//       });
-//     console.log('2',this.listener);
-//     this.listener = ''
-//   }
-//   console.log('3',this.listener);
-// }
-
 const change = (props,control) => {
   const project = props.location.pathname.split('/')[1];
   const projectName = props.match.params.id;
