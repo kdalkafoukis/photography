@@ -2,10 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Desktop from './Desktop';
 import Mobile from './Mobile';
-import '../Styles/App.css';
 
 const Switch = () => {
-  const node = document.getElementById('AppWrapper')
+  // const node = document.getElementById('AppWrapper')
   const width = window.innerWidth
   if(width<800){
     if(this.control){
