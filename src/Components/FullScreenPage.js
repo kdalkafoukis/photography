@@ -168,8 +168,8 @@ export default FullScreenPage;
 
 const PhotoNavigation = (props) =>(
   <div id='pic' className='photoNavigationContainer'>
-      <Decrease {...props}/>
-      <Thumbnails {...props}/>
-      <Increase {...props}/>
+    <Decrease {...props}/>
+    <Thumbnails {...props}/>
+    <Increase {...props}/>
   </div>
 )

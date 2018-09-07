@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
 import {projects} from '../Data/projectData.js';
-import '../Styles/SideBarStyle.css';
-import '../Styles/App.css';
+import '../Styles/MenuStyle.css';
 import PersonalPage from './PersonalPage';
 import Project from './Project';
 import NotFound from './NotFound';
@@ -12,9 +11,9 @@ const active = {color: '#878787'};
 
 const Mobile = () => (
   <Router>
-    <div className='App'>
-      <div className='SideBar'>
-        <NavLink className='Name' to='/'>MARIOS TSIPOPOULOS</NavLink>
+    <div className='MenuContainer'>
+      <div className='Menu'>
+        <NavLink className='Artist' to='/'>MARIOS TSIPOPOULOS</NavLink>
         {projects.map((project, index) =>
         <NavLink key={index} activeStyle={active} className='Project' to={`/${project}`} >Project {index+1}</NavLink>
         )}

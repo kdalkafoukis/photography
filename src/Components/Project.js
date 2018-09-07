@@ -14,6 +14,6 @@ const Project =(props)=>{
         </Link>
       )}
     </div>
-  )
+  );
 }
 export default Project;

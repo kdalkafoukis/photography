@@ -14,7 +14,7 @@ const Desktop = () => (
   <Router>
     <div>
       <div className='SideBar'>
-        <NavLink className='Name' to='/'>MARIOS TSIPOPOULOS</NavLink>
+        <NavLink className='Artist' to='/'>MARIOS TSIPOPOULOS</NavLink>
         {projects.map((project, index) =>
         <NavLink key={index} activeStyle={active} className='Project' to={`/${project}`} >Project {index+1}</NavLink>
         )}
