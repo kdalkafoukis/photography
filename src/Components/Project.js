@@ -4,7 +4,7 @@ import '../Styles/custombootstrap.css';
 import '../Styles/ProjectStyle.css';
 import tileData from '../Data/projectData.js';
 
-const Project =(props)=>{
+const Project = (props) => {
   const project = props.project.split('/')[1];
   return (
     <div className='card-columns projectContainer'>
