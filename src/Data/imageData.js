@@ -2,9 +2,9 @@ import pic1 from '../Pictures/Project1/1.jpg'
 import pic2 from '../Pictures/Project1/2.jpg'
 import pic3 from '../Pictures/Project1/3.jpg'
 
-export const projects = ['project1','project2']
+export const images = ['project1','project2']
 
-const projectData = {
+const imageData = {
   project1:[
     {
       title: 'orange-tree',
@@ -76,4 +76,4 @@ const projectData = {
   ],
 }
 
-export default projectData;
+export default imageData;
