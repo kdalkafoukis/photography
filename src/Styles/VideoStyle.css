@@ -1,0 +1,21 @@
+.videoContainer {
+  margin-left:330px !important;
+  padding:40px !important;
+  height: 100vh !important;
+}
+
+.player {
+  width: 100% !important;
+  max-width:640px !important;
+  max-height: 100% !important;
+  /* max-width: 100% !important; */
+
+
+}
+
+@media only screen and (max-width: 799px) {
+  .projectContainer {
+    margin-left:0px !important;
+    padding:0px !important;
+  }
+}

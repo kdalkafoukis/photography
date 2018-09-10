@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-do
 import {images} from '../Data/imageData.js';
 import '../Styles/SideBarStyle.css';
 import PersonalPage from './PersonalPage';
-import Project from './Project';
+import PhotoProject from './PhotoProject';
+import VideoProject from './VideoProject';
 import FullScreenPage from './FullScreenPage';
 import NotFound from './NotFound';
 import Contact from './Contact';
@@ -18,6 +19,7 @@ const Desktop = () => (
         {images.map((project, index) =>
         <NavLink key={index} activeStyle={active} className='Project' to={`/${project}`} >Project {index+1}</NavLink>
         )}
+        <NavLink activeStyle={active} className='Project' to='/video' >Videos</NavLink>
         <NavLink activeStyle={active} className='Project' to='/contact' >Contact</NavLink>
       </div>
       <Switch>
@@ -26,8 +28,9 @@ const Desktop = () => (
           <Route key={index} exact path={`/${project}/:id`} render={(props)=><FullScreenPage {...props} project={`/${project}`}/>} />
         )}
         {images.map((project, index) =>
-          <Route key={index} exact path={`/${project}`} render={(props)=><Project {...props} project={`/${project}`}/>} />
+          <Route key={index} exact path={`/${project}`} render={(props)=><PhotoProject {...props} project={`/${project}`}/>} />
         )}
+        <Route exact path='/video' component={VideoProject} />
         <Route exact path='/contact' component={Contact} />
         <Route component={NotFound} />
       </Switch >
