@@ -3,7 +3,7 @@ import '../Styles/ContactStyle.css';
 
 const Contact =()=> (
   <div className='ContactContainer'>
-    Marios Tsipopoulos
+    Konstantinos Dalkafoukis
     email : ....
   </div>
 )

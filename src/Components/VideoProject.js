@@ -1,30 +1,45 @@
 // 'https://stackoverflow.com/questions/39517830/render-iframe-video-using-youtubes-js-api-with-reactjs'
 // 'https://developers.google.com/youtube/iframe_api_reference'
-
+// 'https://jsfiddle.net/wzalazar/72NYY/'
 import React from 'react';
-import {Link} from 'react-router-dom';
 import '../Styles/custombootstrap.css';
 import '../Styles/VideoStyle.css';
-import tileData from '../Data/videoData.js';
+import videos from '../Data/videoData.js';
 
-const stopVideo = () => {
-  this.player.stopVideo();
+const stopVideo = (index) => {
+  this.player[index].stopVideo();
 }
 
-const onPlayerReady = (event) => {
-  event.target.playVideo();
+const onPlayerReady = (event,index) => {
+  if (index===0){
+    event.target.playVideo();
+  }
 }
 
 let done = false;
-const onPlayerStateChange = (event,YT) => {
-  if (event.data == YT.PlayerState.PLAYING && !done) {
-    setTimeout(stopVideo, 6000);
+const onPlayerStateChange = (event,YT,index) => {
+  if (event.data === YT.PlayerState.PLAYING && !done) {
+    setTimeout(stopVideo,2 * 1000,index);
     done = true;
   }
+}
+const creatPlayer = (playerInfo,index,YT) => {
+  return new YT.Player(playerInfo.id, {
+    // height: 480,
+    // width: 640,
+    videoId: playerInfo.videoId,
+    events: {
+      onReady: (event) => onPlayerReady(event,index),
+      onStateChange: (event) => onPlayerStateChange(event,YT,index)
+    }
+  })
 }
 
 let loadYT;
 const VideoProject =(props)=>{
+  this.player =[]
+  const project = 'project1';
+
   if (!loadYT) {
     loadYT = new Promise((resolve) => {
       const tag = document.createElement('script')
@@ -36,35 +51,20 @@ const VideoProject =(props)=>{
   }
 
   loadYT.then((YT) => {
-    this.player = new YT.Player(this.youtubePlayerAnchor, {
-      height: 480,
-      width: 640,
-      videoId: 'M7lc1UVf-VE',
-      events: {
-        // onReady: onPlayerReady,
-        onStateChange: (event) => onPlayerStateChange(event,YT)
-      }
+    videos[project].forEach((playerInfo,index)=>{
+      const currentplayer = creatPlayer(playerInfo,index,YT)
+      this.player.push(currentplayer)
     })
-  })
-
+  });
   return (
-    <div className='videoContainer'>
-      <div id='player' className='player' ref={(r) => { this.youtubePlayerAnchor = r }}></div>
+    <div className='card-columns videoContainer'>
+      {videos[project].map((data,index)=>
+        <div key={index} className='card'>
+          <div className='player' id={`player${index+1}`}/>
+        </div>
+      )}
     </div>
   );
 }
+
 export default VideoProject;
-//
-// const VideoProject =(props)=>{
-//   const project = props.project.split('/')[1];
-//   return (
-//     <div className='card-columns projectContainer'>
-//       {tileData[project].map((data,index)=>
-//         <Link key={index} className='card' to={`${props.project}/${data.title}`}>
-//           <img className='card-img img-fluid' src={data.src} alt=''/>
-//         </Link>
-//       )}
-//     </div>
-//   );
-// }
-// export default VideoProject;

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import '../Styles/custombootstrap.css';
-import '../Styles/ProjectStyle.css';
+import '../Styles/PhotoStyle.css';
 import tileData from '../Data/imageData.js';
 
 const PhotoProject =(props)=>{
