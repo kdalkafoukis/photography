@@ -16,8 +16,7 @@
   letter-spacing: 0em !important;
 }
 
-.Artist {
-  margin-bottom: 30px !important;
+.Artist2 {
   font-size: 26px !important;
   font-family: europa !important;
   font-weight: 400 !important;
@@ -32,12 +31,7 @@
 
 
 .Menu {
-  /* display: flex !important; */
-  /* flex-direction: column !important; */
-  /* height:100vh !important; */
-  /* padding-right: 40px !important; */
-  /* padding-left: 40px !important; */
-  /* padding-top: 40px !important; */
+  padding-top: 20px !important;
 
   font-size: 26px !important;
   font-family: europa !important;
@@ -49,7 +43,7 @@
 }
 
 .Project,.Contact  {
-  font-family: proxima-nova !important;
+  /* font-family: proxima-nova !important;
   font-weight: 500 !important;
   font-style: normal !important;
   text-transform: none !important;
@@ -60,7 +54,7 @@
   padding: .2em !important;
   color: #b0b0b0 !important;
   cursor: pointer !important;
-  text-decoration: none !important;
+  text-decoration: none !important; */
 }
 
 .pointer{

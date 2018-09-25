@@ -13,8 +13,8 @@ const active = {color: '#878787'};
 const Mobile = () => (
   <Router>
     <div className='MenuContainer'>
+      <NavLink className='Artist2' to='/'>MARIOS TSIPOPOULOS</NavLink>
       <div className='Menu'>
-        <NavLink className='Artist' to='/'>MARIOS TSIPOPOULOS</NavLink>
         {images.map((project, index) =>
         <NavLink key={index} activeStyle={active} className='Project' to={`/${project}`} >Project {index+1}</NavLink>
         )}

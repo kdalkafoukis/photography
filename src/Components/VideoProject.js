@@ -5,6 +5,7 @@ import React from 'react';
 import '../Styles/custombootstrap.css';
 import '../Styles/VideoStyle.css';
 import videos from '../Data/videoData.js';
+import {NavLink} from 'react-router-dom';
 
 const stopVideo = (index) => {
   this.player[index].stopVideo();
@@ -58,6 +59,8 @@ const VideoProject =(props)=>{
   });
   return (
     <div className='card-columns videoContainer'>
+      <NavLink id='artist' className='Artist' to='/'>MARIOS TSIPOPOULOS</NavLink>
+
       {videos[project].map((data,index)=>
         <div key={index} className='card'>
           <div className='player' id={`player${index+1}`}/>

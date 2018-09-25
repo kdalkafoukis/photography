@@ -1,7 +1,7 @@
 
 import React from 'react';
 import loadImage from 'blueimp-load-image';
-import {Route} from 'react-router-dom';
+import {Route,NavLink} from 'react-router-dom';
 import '../Styles/FullScreenPageStyle.css';
 import tileData from '../Data/imageData.js';
 
@@ -157,6 +157,7 @@ const FullScreenPage =(props)=> {
 
   return(
     <div className='mainContainer'>
+      <NavLink id='artist' className='Artist' to='/'>MARIOS TSIPOPOULOS</NavLink>
       <BottomNavigation {...props}/>
       <PhotoNavigation {...props}/>
       <div id='picture'></div>

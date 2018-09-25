@@ -11,32 +11,34 @@ import Contact from './Contact';
 
 const active = {color: '#878787'};
 
-const Desktop = () => (
-  <Router>
-    <div>
-      <div className='SideBar'>
-        <NavLink className='Artist' to='/'>MARIOS TSIPOPOULOS</NavLink>
-        {images.map((project, index) =>
-        <NavLink key={index} activeStyle={active} className='Project' to={`/${project}`} >Project {index+1}</NavLink>
-        )}
-        <NavLink activeStyle={active} className='Project' to='/video' >Videos</NavLink>
-        <NavLink activeStyle={active} className='Project' to='/contact' >Contact</NavLink>
+const Desktop = () => {
+  return(
+    <Router>
+      <div>
+        <div className='SideBar'>
+
+          {images.map((project, index) =>
+          <NavLink key={index} activeStyle={active} className='Project' to={`/${project}`} >Project {index+1}</NavLink>
+          )}
+          <NavLink activeStyle={active} className='Project' to='/video' >Videos</NavLink>
+          <NavLink activeStyle={active} className='Project' to='/contact' >Contact</NavLink>
+        </div>
+        <Switch>
+          {images.map((project, index) =>
+            <Route key={index} exact path={`/${project}/:id`} render={(props)=><FullScreenPage {...props} project={`/${project}`}/>} />
+          )}
+          {images.map((project, index) =>
+            <Route key={index} exact path={`/${project}`} render={(props)=><PhotoProject {...props} project={`/${project}`}/>} />
+          )}
+          <Route exact path='/' component={(props)=> <PersonalPage {...props}/>} />
+          <Route exact path='/video' component={VideoProject} />
+          <Route exact path='/contact' component={Contact} />
+          <Route component={NotFound} />
+        </Switch >
       </div>
-      <Switch>
-        <Route exact path='/' component={PersonalPage} />
-        {images.map((project, index) =>
-          <Route key={index} exact path={`/${project}/:id`} render={(props)=><FullScreenPage {...props} project={`/${project}`}/>} />
-        )}
-        {images.map((project, index) =>
-          <Route key={index} exact path={`/${project}`} render={(props)=><PhotoProject {...props} project={`/${project}`}/>} />
-        )}
-        <Route exact path='/video' component={VideoProject} />
-        <Route exact path='/contact' component={Contact} />
-        <Route component={NotFound} />
-      </Switch >
-    </div>
-  </Router>
-);
+    </Router>
+  );
+}
 
 
 export default Desktop;
