@@ -20,7 +20,6 @@ const Youtube = () => {
 const Contact =()=> (
   <div className='personalPageContainer'>
     <NavLink id='artist' className='Artist' to='/'>MARIOS CHRISTOS TSIPOPOULOS</NavLink>
-
     <div className='personalPageSubHeader'>
       DIRECTOR / DIRECTOR OF PHOTOGRAPHY / EDITOR
     </div>

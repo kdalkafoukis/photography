@@ -8,19 +8,11 @@
   flex-direction: column;
   justify-content:center !important;
   align-items: center !important;
-  align-self: center;
-  /* margin-left:290px !important; */
   margin-left:150px !important;
   padding:40px !important;
+  padding-top: 80px !important;
   padding-left:0px !important;
   letter-spacing: 0.2em !important;
-  /* height: 100vh; */
-}
-
-@media only screen and (min-width: 800px) {
-  .personalPageContainer {
-    height: 100vh;
-  }
 }
 
 .personalPageHeader{
@@ -61,18 +53,3 @@
 
   }
 }
-
-/* alternative style */
-/* .personalPageContainer {
-  display:flex !important;
-  justify-content:center !important;
-  margin-left:330px !important;
-  padding:40px !important;
-  height:100vh !important;
-}
-
-.image {
-  height:auto !important;
-  max-height:100% !important;
-  max-width:100% !important;
-} */
