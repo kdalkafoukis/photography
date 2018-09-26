@@ -10,7 +10,7 @@ const PhotoProject =(props)=>{
   const project = props.project.split('/')[1];
   return (
     <div className='card-columns projectContainer'>
-      <NavLink id='artist' className='Artist' to='/'>MARIOS TSIPOPOULOS</NavLink>
+      <NavLink id='artist' className='Artist' to='/'>MARIOS CHRISTOS TSIPOPOULOS</NavLink>
       {tileData[project].map((data,index)=>
         <Link key={index} className='card' to={`${props.project}/${data.title}`}>
           <img className='card-img img-fluid' src={data.src} alt=''/>

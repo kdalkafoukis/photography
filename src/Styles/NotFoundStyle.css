@@ -1,5 +1,10 @@
+@font-face {
+    font-family: "ZonaPro";
+    src:url('/fonts/ZonaPro-Thin.otf')  format('otf');
+}
+
 .Text {
-  font-family: proxima-nova !important;
+  font-family: ZonaPro !important;
   font-weight: 400 !important;
   font-style: normal !important;
   text-transform: none !important;

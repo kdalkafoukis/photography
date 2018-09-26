@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
 import {images} from '../Data/imageData.js';
 import '../Styles/MenuStyle.css';
-import PersonalPage from './PersonalPage';
 import PhotoProject from './PhotoProject';
 import VideoProject from './VideoProject';
 import NotFound from './NotFound';
@@ -13,7 +12,7 @@ const active = {color: '#878787'};
 const Mobile = () => (
   <Router>
     <div className='MenuContainer'>
-      <NavLink className='Artist2' to='/'>MARIOS TSIPOPOULOS</NavLink>
+      <NavLink className='Artist2' to='/'>MARIOS CHRISTOS TSIPOPOULOS</NavLink>
       <div className='Menu'>
         {images.map((project, index) =>
         <NavLink key={index} activeStyle={active} className='Project' to={`/${project}`} >Project {index+1}</NavLink>
@@ -22,7 +21,7 @@ const Mobile = () => (
         <NavLink activeStyle={active} className='Project' to='/contact' >Contact</NavLink>
       </div>
       <Switch>
-        <Route exact path='/' component={PersonalPage} />
+        <Route exact path='/' component={()=><Empty/>} />
         {images.map((project, index) =>
           <Route key={index} exact path={`/${project}/:id`} render={(props)=><PhotoProject {...props} project={`/${project}`}/>} />
         )}
@@ -38,3 +37,7 @@ const Mobile = () => (
 );
 
 export default Mobile;
+
+const Empty=()=>(
+  <div></div>
+);

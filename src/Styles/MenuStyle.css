@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "ZonaPro";
+    src:url('/fonts/ZonaPro-Thin.otf')  format('otf');
+}
+
 .MenuContainer {
   display: flex !important;
   flex-direction: column !important;
@@ -8,7 +13,7 @@
   padding-bottom: 20px !important;
 
   font-size: 26px !important;
-  font-family: europa !important;
+  font-family: ZonaPro !important;
   font-weight: 400 !important;
   font-style: normal !important;
   line-height: .9em !important;
@@ -17,8 +22,8 @@
 }
 
 .Artist2 {
-  font-size: 26px !important;
-  font-family: europa !important;
+  font-size: 16px !important;
+  font-family: ZonaPro !important;
   font-weight: 400 !important;
   font-style: normal !important;
   line-height: .9em !important;
@@ -27,6 +32,7 @@
   color:black !important;
   text-decoration: none !important;
   cursor: pointer !important;
+  
 }
 
 
@@ -34,7 +40,7 @@
   padding-top: 20px !important;
 
   font-size: 26px !important;
-  font-family: europa !important;
+  font-family: ZonaPro !important;
   font-weight: 400 !important;
   font-style: normal !important;
   line-height: .9em !important;
@@ -43,7 +49,7 @@
 }
 
 .Project,.Contact  {
-  /* font-family: proxima-nova !important;
+  /* font-family: ZonaPro !important;
   font-weight: 500 !important;
   font-style: normal !important;
   text-transform: none !important;

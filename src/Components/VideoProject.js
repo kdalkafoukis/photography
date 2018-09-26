@@ -59,7 +59,7 @@ const VideoProject =(props)=>{
   });
   return (
     <div className='card-columns videoContainer'>
-      <NavLink id='artist' className='Artist' to='/'>MARIOS TSIPOPOULOS</NavLink>
+      <NavLink id='artist' className='Artist' to='/'>MARIOS CHRISTOS TSIPOPOULOS</NavLink>
 
       {videos[project].map((data,index)=>
         <div key={index} className='card'>

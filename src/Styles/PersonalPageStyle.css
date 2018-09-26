@@ -1,8 +1,28 @@
+@font-face {
+    font-family: "ZonaPro";
+    src:url('/fonts/ZonaPro-Thin.otf')  format('otf');
+}
+
 .personalPageContainer {
   display:flex !important;
+  flex-direction: column;
   justify-content:center !important;
-  margin-left:330px !important;
+  align-items: center !important;
+  margin-left:290px !important;
   padding:40px !important;
+
+  letter-spacing: 0.2em !important;
+}
+
+.personalPageHeader{
+  text-shadow: 6px 6px 0px rgba(0,0,0,0.2) !important;
+  font-family: ZonaPro !important;
+  font-size: 16px !important;
+}
+
+.personalPageSubHeader,.personalPageBody{
+  font-family: ZonaPro !important;
+  font-size: 12px !important;
 }
 
 .image {

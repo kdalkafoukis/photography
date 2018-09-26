@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "ZonaPro";
+    src:url('/fonts/ZonaPro-Thin.otf')  format('otf');
+}
+
 .SideBar {
   display: flex !important;
   flex-direction: column !important;
@@ -7,7 +12,7 @@
   padding-left: 40px !important;
   padding-top: 80px !important;
   font-size: 26px !important;
-  font-family: europa !important;
+  font-family: ZonaPro !important;
   font-weight: 400 !important;
   font-style: normal !important;
   line-height: .9em !important;
@@ -17,8 +22,8 @@
 }
 
 .Artist {
-  font-size: 26px !important;
-  font-family: europa !important;
+  font-size: 16 !important;
+  font-family: ZonaPro !important;
   font-weight: 400 !important;
   font-style: normal !important;
   line-height: .9em !important;
@@ -62,6 +67,7 @@
   .Artist {
     padding:20px !important;
     position:relative !important;
-    visibility: hidden;
+    visibility: hidden !important;
+
   }
 }

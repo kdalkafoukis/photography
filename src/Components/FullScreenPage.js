@@ -157,7 +157,7 @@ const FullScreenPage =(props)=> {
 
   return(
     <div className='mainContainer'>
-      <NavLink id='artist' className='Artist' to='/'>MARIOS TSIPOPOULOS</NavLink>
+      <NavLink id='artist' className='Artist' to='/'>MARIOS CHRISTOS TSIPOPOULOS</NavLink>
       <BottomNavigation {...props}/>
       <PhotoNavigation {...props}/>
       <div id='picture'></div>
