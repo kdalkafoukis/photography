@@ -13,20 +13,12 @@ const Contact =()=> (
     <div className='personalPageBody'>
       Tel: UK: 07842857347
     </div>
+    &nbsp;
     <div className='personalPageBody'>
       Tel: GR: 6984146244
     </div>
     </div>
   </div>
-)
-// <div className='personalPageHeader'>
-//   MARIOS CHRISTOS TSIPOPOULOS
-// </div>
-// <br/>
-// <div className='personalPageSubHeader'>
-//   DIRECTOR / DIRECTOR OF PHOTOGRAPHY / EDITOR
-// </div>
-// <br/>
-// <br/>
-// <br/>
+);
+
 export default Contact;

@@ -17,8 +17,9 @@ const PersonalPage =()=>(
       <div className='personalPageBody'>
         Tel: UK: 07842857347
       </div>
+      &nbsp;
       <div className='personalPageBody'>
-        Tel: GR: 6984146244
+        GR: 6984146244
       </div>
     </div>
   </div>

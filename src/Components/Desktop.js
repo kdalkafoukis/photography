@@ -7,7 +7,6 @@ import PhotoProject from './PhotoProject';
 import VideoProject from './VideoProject';
 import FullScreenPage from './FullScreenPage';
 import NotFound from './NotFound';
-import Contact from './Contact';
 
 const active = {color: '#878787'};
 
@@ -21,7 +20,6 @@ const Desktop = () => {
           <NavLink key={index} activeStyle={active} className='Project' to={`/${project}`} >Project {index+1}</NavLink>
           )}
           <NavLink activeStyle={active} className='Project' to='/video' >Videos</NavLink>
-          <NavLink activeStyle={active} className='Project' to='/contact' >Contact</NavLink>
         </div>
         <Switch>
           {images.map((project, index) =>
@@ -32,7 +30,6 @@ const Desktop = () => {
           )}
           <Route exact path='/' component={(props)=> <PersonalPage {...props}/>} />
           <Route exact path='/video' component={VideoProject} />
-          <Route exact path='/contact' component={Contact} />
           <Route component={NotFound} />
         </Switch >
       </div>

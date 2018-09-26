@@ -18,10 +18,9 @@ const Mobile = () => (
         <NavLink key={index} activeStyle={active} className='Project' to={`/${project}`} >Project {index+1}</NavLink>
         )}
         <NavLink activeStyle={active} className='Project' to='/video' >Videos</NavLink>
-        <NavLink activeStyle={active} className='Project' to='/contact' >Contact</NavLink>
       </div>
       <Switch>
-        <Route exact path='/' component={()=><Empty/>} />
+        <Route exact path='/' component={()=><Contact/>} />
         {images.map((project, index) =>
           <Route key={index} exact path={`/${project}/:id`} render={(props)=><PhotoProject {...props} project={`/${project}`}/>} />
         )}
@@ -29,7 +28,6 @@ const Mobile = () => (
           <Route key={index} exact path={`/${project}`} render={(props)=><PhotoProject {...props} project={`/${project}`}/>} />
         )}
         <Route exact path='/video' component={VideoProject} />
-        <Route exact path='/contact' component={Contact} />
         <Route component={NotFound} />
       </Switch >
     </div>
