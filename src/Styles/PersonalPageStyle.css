@@ -26,6 +26,19 @@
   font-size: 12px !important;
 }
 
+.personalPageWrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center
+}
+
+.personalPageIcons {
+    height:20px;
+    width: 20px;
+    cursor: pointer;
+}
+
 .image {
   height:auto !important;
   max-width:100% !important;
