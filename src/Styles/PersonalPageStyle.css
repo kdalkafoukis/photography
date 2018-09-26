@@ -8,20 +8,28 @@
   flex-direction: column;
   justify-content:center !important;
   align-items: center !important;
+  align-self: center;
   /* margin-left:290px !important; */
   margin-left:150px !important;
   padding:40px !important;
   padding-left:0px !important;
   letter-spacing: 0.2em !important;
+  /* height: 100vh; */
+}
+
+@media only screen and (min-width: 800px) {
+  .personalPageContainer {
+    height: 100vh;
+  }
 }
 
 .personalPageHeader{
-  text-shadow: 6px 6px 0px rgba(0,0,0,0.2) !important;
+  /* text-shadow: 6px 6px 0px rgba(0,0,0,0.2) !important; */
   font-family: ZonaPro !important;
   font-size: 16px !important;
 }
 
-.personalPageSubHeader,.personalPageBody{
+.personalPageSubHeader,.personalPageBody,.personalPageMail{
   font-family: ZonaPro !important;
   font-size: 12px !important;
 }
@@ -48,6 +56,9 @@
   .personalPageContainer {
     margin-left:0px !important;
     padding:0px !important;
+  }
+  .personalPageMail {
+
   }
 }
 

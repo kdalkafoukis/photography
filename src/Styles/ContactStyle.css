@@ -50,7 +50,7 @@
 }
 
 @media only screen and (max-width: 470px) {
-  .contactPageWrapper {
+  .contactPageWrapper,.personalPageMail {
     align-self:flex-start;
   }
 }

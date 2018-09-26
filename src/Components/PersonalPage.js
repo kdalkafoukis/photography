@@ -18,29 +18,35 @@ const Youtube = () => {
 
 const PersonalPage =()=>(
   <div className='personalPageContainer'>
-    <div className='personalPageHeader'>
-      MARIOS CHRISTOS TSIPOPOULOS
-    </div>
-    <br/>
-    <div className='personalPageSubHeader'>
-      DIRECTOR / DIRECTOR OF PHOTOGRAPHY / EDITOR
-    </div>
-    <br/>
-    <div className='personalPageWrapper'>
-        <img onClick={Instagram} className='personalPageIcons' src={instagram} alt=''/>
-        &nbsp;
-        <img onClick={Facebook} className='personalPageIcons' src={facebook} alt=''/>
-        &nbsp;
-        <img onClick={Youtube} className='personalPageIcons' src={youtube} alt=''/>
-    </div>
-    <br/>
-    <div style={{display:'flex',flexDirection:'row',flexWrap:'wrap'}}>
-      <div className='personalPageBody'>
-        Tel: UK: 07842857347
+    <div style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
+      <div className='personalPageHeader'>
+        MARIOS CHRISTOS TSIPOPOULOS
       </div>
-      &nbsp;
-      <div className='personalPageBody'>
-        GR: 6984146244
+      <br/>
+      <div className='personalPageSubHeader'>
+        DIRECTOR / DIRECTOR OF PHOTOGRAPHY / EDITOR
+      </div>
+      <br/>
+      <div className='personalPageWrapper'>
+          <img onClick={Instagram} className='personalPageIcons' src={instagram} alt=''/>
+          &nbsp;
+          <img onClick={Facebook} className='personalPageIcons' src={facebook} alt=''/>
+          &nbsp;
+          <img onClick={Youtube} className='personalPageIcons' src={youtube} alt=''/>
+      </div>
+      <br/>
+      <div style={{display:'flex',flexDirection:'row',flexWrap:'wrap'}}>
+        <div className='personalPageBody'>
+          Tel: UK: 07842857347
+        </div>
+        &nbsp;
+        <div className='personalPageBody'>
+          GR: 6984146244
+        </div>
+      </div>
+      <br/>
+      <div className='personalPageMail'>
+        mariostsiposfilm@gmail.com
       </div>
     </div>
   </div>

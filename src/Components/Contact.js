@@ -36,13 +36,17 @@ const Contact =()=> (
     </div>
     <br/>
     <div className='contactTelephones'>
-    <div className='personalPageBody'>
-      Tel: UK: 07842857347
+      <div className='personalPageBody'>
+        Tel: UK: 07842857347
+      </div>
+      &nbsp;
+      <div className='personalPageBody'>
+        Tel: GR: 6984146244
+      </div>
     </div>
-    &nbsp;
-    <div className='personalPageBody'>
-      Tel: GR: 6984146244
-    </div>
+    <br/>
+    <div className='personalPageMail'>
+      mariostsiposfilm@gmail.com
     </div>
   </div>
 );
