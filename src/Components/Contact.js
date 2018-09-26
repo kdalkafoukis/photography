@@ -28,7 +28,9 @@ const Contact =()=> (
     <div className='contactPageWrapper'>
         <img onClick={Instagram} className='contactPageIcons' src={instagram} alt=''/>
         &nbsp;
+        &nbsp;
         <img onClick={Facebook} className='contactPageIcons' src={facebook} alt=''/>
+        &nbsp;
         &nbsp;
         <img onClick={Youtube} className='contactPageIcons' src={youtube} alt=''/>
     </div>
