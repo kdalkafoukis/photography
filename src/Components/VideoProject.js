@@ -4,7 +4,7 @@
 import React from 'react';
 import '../Styles/custombootstrap.css';
 import '../Styles/VideoStyle.css';
-import videos from '../Data/videoData.js';
+import videoData from '../Data/videoData.js';
 import {NavLink} from 'react-router-dom';
 
 const stopVideo = (index) => {
@@ -30,8 +30,8 @@ const creatPlayer = (playerInfo,index,YT) => {
     // width: 640,
     videoId: playerInfo.videoId,
     events: {
-      onReady: (event) => onPlayerReady(event,index),
-      onStateChange: (event) => onPlayerStateChange(event,YT,index)
+      // onReady: (event) => onPlayerReady(event,index),
+      // onStateChange: (event) => onPlayerStateChange(event,YT,index)
     }
   })
 }
@@ -39,7 +39,7 @@ const creatPlayer = (playerInfo,index,YT) => {
 let loadYT;
 const VideoProject =(props)=>{
   this.player =[]
-  const project = 'project1';
+  const project = props.project.split('/')[1];
 
   if (!loadYT) {
     loadYT = new Promise((resolve) => {
@@ -52,20 +52,22 @@ const VideoProject =(props)=>{
   }
 
   loadYT.then((YT) => {
-    videos[project].forEach((playerInfo,index)=>{
+    videoData[project].forEach((playerInfo,index)=>{
       const currentplayer = creatPlayer(playerInfo,index,YT)
       this.player.push(currentplayer)
     })
   });
   return (
-    <div className='card-columns videoContainer'>
+    <div>
       <NavLink id='artist' className='Artist' to='/'>MARIOS CHRISTOS TSIPOPOULOS</NavLink>
 
-      {videos[project].map((data,index)=>
-        <div key={index} className='card'>
-          <div className='player' id={`player${index+1}`}/>
-        </div>
-      )}
+      <div className='card-columns videoContainer'>
+        {videoData[project].map((data,index)=>
+          <div key={index} className='card'>
+            <div className='player' id={`player${index+1}`}/>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

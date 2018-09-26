@@ -2,7 +2,8 @@ import pic1 from '../Pictures/Project1/1.jpg'
 import pic2 from '../Pictures/Project1/2.jpg'
 import pic3 from '../Pictures/Project1/3.jpg'
 
-export const images = ['project1','project2']
+export const images = []
+// export const images = ['project1','project2']
 
 const imageData = {
   project1:[

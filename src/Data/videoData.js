@@ -1,24 +1,32 @@
-export const videos = ['project1','project2']
+export const videos = ['FILMS','COMMERCIAL']
 
 const videoData = {
-  project1 : [
+  FILMS : [
     {
       id: 'player1',
       height: '390',
       width: '640',
-      videoId: '_JZom_gVfuw'
+      videoId: 'r2D3VAJkOnI'
+    },
+  ],
+  COMMERCIAL : [
+    {
+      id: 'player1',
+      height: '390',
+      width: '640',
+      videoId: '24uf08MeYIw'
     },
     {
       id: 'player2',
       height: '390',
       width: '640',
-      videoId: '41qC3w3UUkU'
+      videoId: 'KkJZcbm-lSc'
     },
     {
       id: 'player3',
       height: '390',
       width: '640',
-      videoId: 'DaRG0ukxYqQ'
+      videoId: 'JE_O6oY7h8w'
     },
   ],
 }
