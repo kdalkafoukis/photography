@@ -39,7 +39,3 @@ const Mobile = () => (
 );
 
 export default Mobile;
-
-const Empty=()=>(
-  <div></div>
-);

@@ -7,23 +7,23 @@ import '../Styles/VideoStyle.css';
 import videoData from '../Data/videoData.js';
 import {NavLink} from 'react-router-dom';
 
-const stopVideo = (index) => {
-  this.player[index].stopVideo();
-}
-
-const onPlayerReady = (event,index) => {
-  if (index===0){
-    event.target.playVideo();
-  }
-}
-
-let done = false;
-const onPlayerStateChange = (event,YT,index) => {
-  if (event.data === YT.PlayerState.PLAYING && !done) {
-    setTimeout(stopVideo,2 * 1000,index);
-    done = true;
-  }
-}
+// const stopVideo = (index) => {
+//   this.player[index].stopVideo();
+// }
+//
+// const onPlayerReady = (event,index) => {
+//   if (index===0){
+//     event.target.playVideo();
+//   }
+// }
+//
+// let done = false;
+// const onPlayerStateChange = (event,YT,index) => {
+//   if (event.data === YT.PlayerState.PLAYING && !done) {
+//     setTimeout(stopVideo,2 * 1000,index);
+//     done = true;
+//   }
+// }
 const creatPlayer = (playerInfo,index,YT) => {
   return new YT.Player(playerInfo.id, {
     // height: 480,
