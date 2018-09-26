@@ -8,9 +8,10 @@
   flex-direction: column;
   justify-content:center !important;
   align-items: center !important;
-  margin-left:290px !important;
+  /* margin-left:290px !important; */
+  margin-left:150px !important;
   padding:40px !important;
-
+  padding-left:0px !important;
   letter-spacing: 0.2em !important;
 }
 
