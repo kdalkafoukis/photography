@@ -7,6 +7,8 @@ import '../Styles/VideoStyle.css';
 import videoData from '../Data/videoData.js';
 import {NavLink} from 'react-router-dom';
 
+let player =[];
+
 // const stopVideo = (index) => {
 //   this.player[index].stopVideo();
 // }
@@ -24,6 +26,7 @@ import {NavLink} from 'react-router-dom';
 //     done = true;
 //   }
 // }
+
 const creatPlayer = (playerInfo,index,YT) => {
   return new YT.Player(playerInfo.id, {
     // height: 480,
@@ -37,25 +40,24 @@ const creatPlayer = (playerInfo,index,YT) => {
 }
 
 let loadYT;
-const VideoProject =(props)=>{
-  this.player =[]
+const VideoProject = props => {
   const project = props.project.split('/')[1];
 
   if (!loadYT) {
-    loadYT = new Promise((resolve) => {
-      const tag = document.createElement('script')
-      tag.src = 'https://www.youtube.com/iframe_api'
-      const firstScriptTag = document.getElementsByTagName('script')[0]
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
-      window.onYouTubeIframeAPIReady = () => resolve(window.YT)
-    })
+    loadYT = new Promise( resolve => {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      window.onYouTubeIframeAPIReady = () => resolve(window.YT);
+    });
   }
 
   loadYT.then((YT) => {
     videoData[project].forEach((playerInfo,index)=>{
-      const currentplayer = creatPlayer(playerInfo,index,YT)
-      this.player.push(currentplayer)
-    })
+      const currentplayer = creatPlayer(playerInfo,index,YT);
+      player.push(currentplayer);
+    });
   });
   return (
     <div>
